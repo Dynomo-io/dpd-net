@@ -261,6 +261,7 @@ def to_rgb3(im):
     # 3x the data we need and truncate afterwards
     im=im*(255/np.max(im))
     return np.asarray(np.dstack((im, im, im)), dtype=np.uint8)
+
 def test(divider,canales,path,img_x,img_y):
     valinput=[]
     valoutput=[]
@@ -269,7 +270,7 @@ def test(divider,canales,path,img_x,img_y):
     valinput = []
     valoutput=  []
     for j in range(1,741,1):
-         img_path = path+"validation/imagenes/seq-P01-M04-A0002-G00-C00-S0101/image%04d.png" % (j)
+         img_path = path + "validation/images/seq-P01-M04-A0002-G00-C00-S0101/image%04d.png" % (j)
          imgc = imageio.imread(img_path)
          imgc = cv.resize(imgc, (int(img_x / divider), int(img_y / divider)))
          xc = image.img_to_array(imgc)
